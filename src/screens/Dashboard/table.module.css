@@ -1,0 +1,48 @@
+.table {
+	width: 95vw;
+	justify-content: center;
+	border: none;
+}
+.th {
+	padding: 2vh;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	background-color: #abaaa8;
+}
+.tr {
+	background-color: #ddd;
+}
+.tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+.td {
+	border: none;
+	padding: 2vh;
+}
+.tableBody {
+	height: 75vh;
+	overflow-y: auto;
+}
+.label {
+	text-align: start;
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+}
+.thead {
+	position: sticky;
+	top: 0px;
+}
+.dashboard {
+	margin: 2vh;
+}
+.customPopupCss {
+	height: 50ch;
+}
+.formButtons {
+	display: flex;
+	margin-top: 5vh;
+	/* margin-bottom: 2vh; */
+	justify-content: end;
+	gap: 5vw;
+}

@@ -1,0 +1,9 @@
+.textfield{
+    width: -webkit-fill-available;
+    padding: 2vh;
+    border: 2px solid #8ba6ad;
+    border-radius: 5px;
+}
+.textfield:focus{
+    border: 2px border pink;
+}

@@ -1,0 +1,1 @@
+export const DATA_URL='https://assets.alippo.com/catalog/static/data.json'

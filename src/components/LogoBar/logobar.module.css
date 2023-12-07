@@ -1,0 +1,57 @@
+.logo {
+	text-align: start;
+	transition: box-shadow 0.5s;
+	/* width: 5%; */
+	cursor: pointer;
+}
+.logo:hover {
+	box-shadow: 0 0 11px gray;
+}
+
+@media screen and (min-width: 701px) {
+	.menu {
+		background-color: black;
+		height: 2%;
+		justify-content: space-between;
+		display: flex;
+		position: sticky;
+		top: 0px;
+		padding: 7px 20px 7px 20px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.menu {
+		background-color: black;
+		height: 2%;
+		/* width: 81%; */
+		justify-content: space-between;
+		display: flex;
+		position: sticky;
+		top: 0px;
+		padding: 7px 50px 7px 20px;
+	}
+}
+.menuPopup {
+	background: white;
+	color: black;
+}
+.menuPopupItems {
+	width: auto;
+	color: black;
+	background: white !important;
+}
+.eachItem {
+	margin: 10px;
+	padding-bottom: 11px;
+	cursor: pointer;
+	background: white;
+	border-bottom: 1px solid black;
+}
+.icon {
+	padding: 10px;
+	transition: box-shadow 0.3s;
+	cursor: pointer;
+}
+.icon:hover {
+	box-shadow: 0 0 11px gray;
+}
