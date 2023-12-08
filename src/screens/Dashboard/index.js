@@ -65,7 +65,7 @@ function Dashboard() {
 										<Popup
 											className="customPopupCss"
 											trigger={<MdEdit style={{ cursor: "pointer" }} />}
-											onOpen={() => setName(row?.name)}
+											onOpen={() => setName(row?.name?row?.name:"")}
 											modal
 											nested>
 											{(close) => (
