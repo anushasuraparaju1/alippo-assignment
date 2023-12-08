@@ -13,5 +13,5 @@ Frontend Application made with React.js to display a dashboard with data from ex
 2. Open the project using any editor like vsCode.
 3. Open terminal
 4. Install the packages using npm install or npm i to generate node_modules
-5. npm start - run this command to start the application. Default portal will be 3000
+5. npm start - run this command to start the application. Default port will be 3000
 6. Go to any browser like chrome, open localhost:3000
