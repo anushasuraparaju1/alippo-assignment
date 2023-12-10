@@ -1,8 +1,8 @@
-.modal-dialog{
-    z-index: 1;
-    position: fixed;
-    top: 29vh;
-    background: white;
-    left: 30vw;
-    width: 65vh;
+.modal-dialog {
+	z-index: 1;
+	position: fixed;
+	top: 29vh;
+	background: white;
+	left: 30vw;
+	width: 65vh;
 }

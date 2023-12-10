@@ -3,7 +3,7 @@ import { fetchData } from "../../services/fetchData.tsx";
 import styles from "./table.module.css";
 import { MdEdit, MdDelete } from "react-icons/md";
 import Modal from "react-bootstrap/Modal";
-import './modal.css'
+import "./modal.css";
 import TextField from "../../components/TextField/index.tsx";
 import StyledButton from "../../components/StyledButton/index.tsx";
 import React from "react";
@@ -12,7 +12,7 @@ function Dashboard() {
 	const [name, setName] = useState<string>("");
 	const [showEditPopup, setShowEditPopup] = useState<boolean>(false);
 	const [showDeletePopup, setShowDeletePopup] = useState<boolean>(false);
-	const [operatingRowIndex,setOperatingRowIndex]=useState<number>(-1);
+	const [operatingRowIndex, setOperatingRowIndex] = useState<number>(-1);
 	useEffect(() => {
 		const response = fetchData();
 		response
@@ -21,7 +21,7 @@ function Dashboard() {
 				console.log(err);
 			});
 	}, []);
-	useEffect(()=>{},[data])
+	useEffect(() => {}, [data]);
 	const tableHeaders = ["SL.NO", "Name", "Age", "City", "PinCode", "Actions"];
 	const handleDelete = (ind: number) => {
 		setData([...data.slice(0, ind), ...data.slice(ind + 1)]);
@@ -42,79 +42,83 @@ function Dashboard() {
 				Dashboard<hr></hr>
 			</div>
 			<div className={styles.tableBody}>
-			<Modal show={showEditPopup} >
-			<div
-													className="modal"
-													style={{
-														height: "30vh",
-														...modalStyle,
-													}}>
-													<div style={{ fontWeight: "bold" }}>Edit Name</div>
-													<div>
-														<hr></hr>
-													</div>
-													<div
-														className="content"
-														style={{ textAlign: "center" }}>
-														<TextField
-															value={name}
-															onChange={(e) => {
-																e.preventDefault();
-																setName(e.target.value);
-															}}
-														/>
+				<Modal show={showEditPopup}>
+					<div
+						className="modal"
+						style={{
+							height: "30vh",
+							...modalStyle,
+						}}>
+						<div style={{ fontWeight: "bold" }}>Edit Name</div>
+						<div>
+							<hr></hr>
+						</div>
+						<div
+							className="content"
+							style={{ textAlign: "center" }}>
+							<TextField
+								value={name}
+								onChange={(e) => {
+									e.preventDefault();
+									setName(e.target.value);
+								}}
+							/>
 
-														<div className={styles.formButtons}>
-															<StyledButton
-																onClick={() => {
-																	setShowEditPopup(false)
-																}}
-																label="Cancel"
-																type="reset"></StyledButton>
-															<StyledButton
-																onClick={() => {
-																	handleEdit(operatingRowIndex);
-																	setShowEditPopup(false)
-																}}
-																label="Save"
-																type="submit"></StyledButton>
-														</div>
-													</div>
-												</div>									
-			</Modal>
-											<Modal show={showDeletePopup} style={{position:"relative",width:"40vw"}}>
-											<div
-													className="modal"
-													style={{
-														height: "30vh",
-														...modalStyle,
-													}}>
-														<div style={{ fontWeight: "bold" }}>Delete {operatingRowIndex + 1}</div>
-													<div>
-														<hr></hr>
-													</div>
-													<div
-														className="content"
-														style={{ textAlign: "center" }}>
-												
-													<div className={styles.formButtons}>
-														<StyledButton
-															onClick={() => {
-																setShowDeletePopup(false);
-															}}
-															label="cancel"
-															type="reset"></StyledButton>
+							<div className={styles.formButtons}>
+								<StyledButton
+									onClick={() => {
+										setShowEditPopup(false);
+									}}
+									label="Cancel"
+									type="reset"></StyledButton>
+								<StyledButton
+									onClick={() => {
+										handleEdit(operatingRowIndex);
+										setShowEditPopup(false);
+									}}
+									label="Save"
+									type="submit"></StyledButton>
+							</div>
+						</div>
+					</div>
+				</Modal>
+				<Modal
+					show={showDeletePopup}
+					style={{ position: "relative", width: "40vw" }}>
+					<div
+						className="modal"
+						style={{
+							height: "30vh",
+							...modalStyle,
+						}}>
+						<div style={{ fontWeight: "bold" }}>
+							Delete {operatingRowIndex + 1}
+						</div>
+						<div>
+							<hr></hr>
+						</div>
+						<div
+							className="content"
+							style={{ textAlign: "center" }}>
+							<div className={styles.formButtons}>
+								<StyledButton
+									onClick={() => {
+										setShowDeletePopup(false);
+									}}
+									label="cancel"
+									type="reset"></StyledButton>
 
-														<StyledButton
-															onClick={() => {
-																handleDelete(operatingRowIndex);
-																setShowDeletePopup(false);
-															}}
-															label="Confirm"
-															type="submit"></StyledButton>
-													</div></div>
-											</div>
-											</Modal>
+								<StyledButton
+									onClick={() => {
+										handleDelete(operatingRowIndex);
+										setShowDeletePopup(false);
+									}}
+									label="Confirm"
+									type="submit"></StyledButton>
+							</div>
+						</div>
+					</div>
+				</Modal>
 				<table
 					className={styles.table}
 					cellPadding="0"
@@ -159,22 +163,20 @@ function Dashboard() {
 													setShowEditPopup(true);
 												}}
 											/>
-											
 
-											<MdDelete style={{ cursor: "pointer" }} onClick={() => {
+											<MdDelete
+												style={{ cursor: "pointer" }}
+												onClick={() => {
 													setOperatingRowIndex(ind);
 													setShowDeletePopup(true);
-												}}/>
-											
+												}}
+											/>
 										</td>
 									</tr>
 								);
 							}
 						)}
-
-					
-				
-											</tbody>
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -182,5 +184,3 @@ function Dashboard() {
 }
 
 export default memo(Dashboard);
-
-

@@ -3,7 +3,7 @@ import logo from "../../assets/alippoLogo.svg";
 import styles from "./logobar.module.css";
 import { useNavigate } from "react-router";
 import React from "react";
-function LogoBar () {
+function LogoBar() {
 	const navigate = useNavigate();
 	return (
 		<div className={styles.menu}>
