@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import LogoBar from "./components/LogoBar";
+import LogoBar from "./components/LogoBar/index.tsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Dashboard from "./screens/Dashboard";
+import Dashboard from "./screens/Dashboard/index.tsx";
+
 
 function App() {
 	return (
